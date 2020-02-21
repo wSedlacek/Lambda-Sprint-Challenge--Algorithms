@@ -5,8 +5,9 @@ Your function must utilize recursion. It cannot contain any loops.
 '''
 
 
-def count_th(word):
+def count_th(word: str):
+    if 'th' not in word:
+        return 0
 
-    # TBC
-
-    pass
+    one_th_removed = word.replace('th', '_', 1)
+    return 1 + count_th(one_th_removed)
