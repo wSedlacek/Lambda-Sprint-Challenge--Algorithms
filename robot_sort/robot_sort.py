@@ -111,13 +111,12 @@ class SortingRobot:
                 if self.compare_item() is 1:
                     self.swap_item()
 
-            # Move back to the left until we reach the point where this item would be inserted
-            while self.can_move_left():
+            # Find the empty spot
+            while self.compare_item() is not None:
                 self.move_left()
 
-                if self.compare_item() is None:
-                    self.swap_item()
-                    break
+            # Insert this item in place of None
+            self.swap_item()
 
             # This item is done, move to the right and complete the next one
             self.move_right()
