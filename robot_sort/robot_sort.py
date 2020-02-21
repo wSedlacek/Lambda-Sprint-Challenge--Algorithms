@@ -98,15 +98,20 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+
+        # Pick up the first item.
         self.swap_item()
 
+        # Move to the right until we reach the end of the list
         while self.can_move_right():
+            # Move to the right picking up the smallest item until we have checked all items.
             while self.can_move_right():
                 self.move_right()
 
                 if self.compare_item() is 1:
                     self.swap_item()
 
+            # Move back to the left until we reach the point where this item would be inserted
             while self.can_move_left():
                 self.move_left()
 
@@ -119,9 +124,11 @@ class SortingRobot:
                     self.swap_item()
                     break
 
+            # This item is done, move to the right and complete the next one
             self.move_right()
             self.swap_item()
 
+        # Drop the last item
         self.swap_item()
 
 

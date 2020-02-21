@@ -23,3 +23,5 @@ This is just binary search.
 3. If it breaks then you go to the midpoint between the bottom floor and where you are now.
 4. If it doesn't then you go to the mid point between the top floor and where you are now.
 5. Repeat steps 2-5 until you have determined what is the lowest floor an egg will break.
+
+This would have a complexity of O(log n)
